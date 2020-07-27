@@ -34,8 +34,8 @@ class Blog extends Component {
 
     render () {
         const posts = this.state.posts.map(post => {
-            return <Post t
-                itle={post.title} 
+            return <Post
+                title={post.title} 
                 author={post.author} 
                 key={post.id}
                 clicked={() => this.postSelectedHandler(post.id)}/>
