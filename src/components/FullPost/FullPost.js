@@ -10,10 +10,12 @@ class FullPost extends Component {
 
     componentDidUpdate() {
         if(this.props.id) {
-            axios.get(`https://jsonplaceholder.typicode.com/posts/${this.props.id}`)
-                .then(res => {
-                    this.setState({loadedPost: res.data})
-                })
+            if(!this.state.loadedPost || (this.state.loadedPost && this.props.id !== this.state.loadedPost.id)) {
+                axios.get(`https://jsonplaceholder.typicode.com/posts/${this.props.id}`)
+                    .then(res => {
+                        this.setState({loadedPost: res.data})
+                    })
+            }
         }
     }
 
