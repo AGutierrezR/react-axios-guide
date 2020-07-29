@@ -20,6 +20,9 @@ class NewPost extends Component {
             .then(res => {
                 console.log('Datos enviados')
             })
+            .catch(err => {
+                console.log('Ha ocurrido un error');
+            })
     }
 
     render () {
